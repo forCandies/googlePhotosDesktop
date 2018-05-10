@@ -1,0 +1,33 @@
+{
+  "make_targets": {
+    "darwin": [
+      "dmg"
+    ]
+  },
+  "electronInstallerDMG": {
+    "title": "Google Photos for Desktop",
+    "background": "./static/install.png",
+    "icon": "./static/icon.icns"
+  },
+  "electronPackagerConfig": {
+    "name": "Google Photos",
+    "executableName": "Google Photos",
+    "appBundleId": "com.davidherzina.GooglePhotosDesktop",
+    "appCategoryType": "public.app-category.photography",
+    "icon": "./static/icon.icns",
+    "packageManager": "npm",
+    "asar": true,
+    "prune": true,
+    "flatten": true,
+    "ignore": [
+      ".idea/",
+      "out/",
+      ".git/"
+    ],
+    "osxSign": {
+      "type": "distribution",
+      "identity": "Developer ID Application: David Herzina (8FFG9YFX43)",
+      "platform": "darwin"
+    }
+  }
+}
