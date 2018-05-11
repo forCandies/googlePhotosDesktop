@@ -24,6 +24,7 @@ import installExtension, {
 } from 'electron-devtools-installer';
 import * as windowStateKeeper from 'electron-window-state';
 import {createMenu} from './Menu';
+import Utils from './Utils';
 
 
 /**
@@ -80,8 +81,7 @@ class Window extends BrowserWindow
 	{
 		this.loadURL(Window.getUrl());
 
-		const isDevMode = process.execPath.match(/[\\/]electron/);
-		if (isDevMode) {
+		if (Utils.isDevMode()) {
 			await installExtension(REACT_DEVELOPER_TOOLS);
 		}
 	}

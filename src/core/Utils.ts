@@ -18,26 +18,19 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-import {app} from 'electron';
-import Window from './core/Window';
-
-
 /**
  *
  */
-require('update-electron-app')({repo: 'forCandies/GooglePhotosDesktop'});
+class Utils
+{
+	/**
+	 * @returns {boolean}
+	 */
+	public static isDevMode(): boolean
+	{
+		return !!process.execPath.match(/[\\/]electron/);
+	}
+}
 
-/**
- *
- */
-let window;
 
-/**
- *
- */
-app.on('ready', () => window = new Window());
-
-/**
- *
- */
-app.on('window-all-closed', () => app.quit());
+export default Utils;

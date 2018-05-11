@@ -18,10 +18,9 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-import {app, Menu} from 'electron';
+import {app, Menu, shell} from 'electron';
+import Utils from './Utils';
 
-
-const isDevMode = process.execPath.match(/[\\/]electron/);
 
 /**
  *
@@ -50,6 +49,13 @@ export const menuAppTemplate = (): object =>
 		submenu: [
 			{role: 'about'},
 			{type: 'separator'},
+			{
+				label: 'Check for Updates…',
+				click()
+				{
+					require('update-electron-app')({repo: 'forCandies/GooglePhotosDesktop'});
+				}
+			},
 			{role: 'services', submenu: []},
 			{type: 'separator'},
 			{role: 'hide'},
@@ -105,7 +111,7 @@ export const menuViewTemplate = (): object =>
 		{role: 'togglefullscreen'}
 	];
 
-	if (isDevMode) {
+	if (Utils.isDevMode()) {
 		menu = menu.concat([
 			{
 				type: 'separator'
@@ -153,6 +159,14 @@ export const menuHelpTemplate = (): object =>
 {
 	return {
 		role: 'help',
-		submenu: []
+		submenu: [
+			{
+				label: 'Visit website…',
+				click()
+				{
+					shell.openExternal('http://googlephotos.forcandies.com');
+				}
+			}
+		]
 	};
 };

@@ -1,13 +1,14 @@
 {
   "make_targets": {
     "darwin": [
-      "dmg"
+      "dmg",
+      "zip"
     ]
   },
   "electronInstallerDMG": {
     "title": "Google Photos for Desktop",
     "background": "./static/install.png",
-    "icon": "./static/icon.icns"
+    "icon": "./static/install.icns"
   },
   "electronPackagerConfig": {
     "name": "Google Photos",
@@ -21,7 +22,6 @@
     "flatten": true,
     "ignore": [
       ".idea/",
-      "out/",
       ".git/"
     ],
     "osxSign": {
@@ -29,5 +29,14 @@
       "identity": "Developer ID Application: David Herzina (8FFG9YFX43)",
       "platform": "darwin"
     }
+  },
+  "github_repository": {
+    "owner": "forCandies",
+    "name": "GooglePhotosDesktop"
+  },
+  "publish_targets": {
+    "darwin": [
+      "github"
+    ]
   }
 }
