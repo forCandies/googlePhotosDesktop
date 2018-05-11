@@ -166,6 +166,13 @@ export const menuHelpTemplate = (): object =>
 				{
 					shell.openExternal('http://googlephotos.forcandies.com');
 				}
+			},
+			{
+				label: 'Report Issue…',
+				click()
+				{
+					shell.openExternal('https://github.com/forCandies/GooglePhotosDesktop/issues/new');
+				}
 			}
 		]
 	};

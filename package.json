@@ -1,7 +1,7 @@
 {
   "name": "GooglePhotosDesktop",
   "productName": "Google Photos for Desktop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Open Source unofficial application for your Mac. Supports all features you know.",
   "repository": {
     "type": "git",
