@@ -20,22 +20,13 @@
 
 import {app} from 'electron';
 import Window from './core/Window';
+import Updater from './core/Updater';
 
 
 /**
  *
  */
-require('update-electron-app')({repo: 'forCandies/GooglePhotosDesktop'});
-
-/**
- *
- */
-let window;
-
-/**
- *
- */
-app.on('ready', () => window = new Window());
+app.on('ready', () => new Window() && Updater.getInstance());
 
 /**
  *

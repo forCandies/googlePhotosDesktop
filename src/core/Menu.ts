@@ -19,7 +19,8 @@
  */
 
 import {app, Menu, shell} from 'electron';
-import Utils from './Utils';
+import Updater from './Updater';
+import * as isDev from 'electron-is-dev';
 
 
 /**
@@ -53,7 +54,7 @@ export const menuAppTemplate = (): object =>
 				label: 'Check for Updates…',
 				click()
 				{
-					require('update-electron-app')({repo: 'forCandies/GooglePhotosDesktop'});
+					Updater.getInstance().checkForUpdates(false);
 				}
 			},
 			{role: 'services', submenu: []},
@@ -111,7 +112,7 @@ export const menuViewTemplate = (): object =>
 		{role: 'togglefullscreen'}
 	];
 
-	if (Utils.isDevMode()) {
+	if (isDev) {
 		menu = menu.concat([
 			{
 				type: 'separator'
