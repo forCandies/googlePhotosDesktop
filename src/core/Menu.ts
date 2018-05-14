@@ -57,6 +57,7 @@ export const menuAppTemplate = (): object =>
 					Updater.getInstance().checkForUpdates(false);
 				}
 			},
+			{type: 'separator'},
 			{role: 'services', submenu: []},
 			{type: 'separator'},
 			{role: 'hide'},

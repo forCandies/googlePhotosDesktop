@@ -18,7 +18,10 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-import {BrowserWindow} from 'electron';
+import {
+	BrowserWindow,
+	BrowserWindowConstructorOptions
+} from 'electron';
 import installExtension, {
 	REACT_DEVELOPER_TOOLS
 } from 'electron-devtools-installer';
@@ -39,7 +42,7 @@ class Window extends BrowserWindow
 	constructor()
 	{
 		const state = Window.getState();
-		const properties = {
+		const properties: BrowserWindowConstructorOptions = {
 			title: 'Google Photos',
 			minHeight: 420,
 			minWidth: 420,
@@ -112,7 +115,7 @@ class Window extends BrowserWindow
 	 */
 	protected sendFullScreenMode(isFullScreenMode: boolean): void
 	{
-		this.webContents.send('window:fullscreen', {
+		this.webContents.send('window:fullScreen', {
 			'isFullScreenMode': isFullScreenMode
 		});
 	}
@@ -123,7 +126,7 @@ class Window extends BrowserWindow
 	 */
 	protected static getUrl(): string
 	{
-		return `file://${__dirname}/../html/app.html`;
+		return `file://${__dirname}/../render/App.html`;
 	}
 
 

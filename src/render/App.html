@@ -21,32 +21,13 @@
 
 <html lang="en">
 <head>
-    <link href="./style.css" rel="stylesheet" media="all">
+    <link href="./Style.css" rel="stylesheet" media="all">
 </head>
 <body>
-<div class='StatusBar'></div>
-<webview class="App" src="https://photos.google.com/"></webview>
-</body>
+<div id="StatusBar" class='StatusBar'></div>
+<webview id="App" class="App" src="https://photos.google.com/" nodeintegration></webview>
 
 <script>window.exports = module.exports</script>
-<script type="text/tsx">
-
-	import {ipcRenderer} from 'electron';
-
-
-	ipcRenderer.on('window:fullscreen', (_event, data) =>
-	{
-		let statusBar = document.getElementsByClassName('StatusBar')[0];
-		let app = document.getElementsByClassName('App')[0];
-
-		if (data.isFullScreenMode) {
-			statusBar.classList.add('StatusBar--hidden');
-			app.classList.add('App--noStatusBar');
-		} else {
-			statusBar.classList.remove('StatusBar--hidden');
-			app.classList.remove('App--noStatusBar');
-		}
-	});
-
-</script>
+<script src="./App.ts"></script>
+</body>
 </html>

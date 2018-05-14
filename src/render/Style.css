@@ -23,6 +23,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background: #ffffff;
 }
 
 .StatusBar {
@@ -32,8 +33,21 @@ html, body {
     left: 0;
     height: 23px;
     width: 100%;
-    background: #eee;
+    background: rgba(0, 0, 0, 0.04);
     -webkit-app-region: drag;
+    transition: all .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.StatusBar--search {
+    background: #eee;
+}
+
+.StatusBar--detail {
+    background: #000000;
+}
+
+.StatusBar--white {
+    background: #ffffff;
 }
 
 .StatusBar--hidden {
@@ -42,13 +56,15 @@ html, body {
 
 .App {
     display: inline-flex;
-    margin-top: 23px;
+    top: 23px;
+    position: absolute;
+    left: 0;
     width: 100%;
     height: calc(100% - 23px);
     background: #ffffff;
 }
 
 .App--noStatusBar {
-    margin-top: 0;
+    top: 0;
     height: 100%;
 }
