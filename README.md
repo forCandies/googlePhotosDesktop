@@ -4,7 +4,7 @@
 We bring full power of Google Photos to your desktop. We pack all features in one single desktop application.
 This project is also Open source and we are looking forward to some enhancements.
 
-[Download for macOS](http://googlephotos.forcandies.com/download/macos) or [visit Website](http://googlephotos.forcandies.com)
+[Download for macOS](http://googlephotos.forcandies.com)
 
 <img align="center" src="http://forcandies.com/assets/gp-a.png" alt="Google Photos for Desktop">
 
